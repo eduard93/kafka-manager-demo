@@ -1,0 +1,13 @@
+version: "2.2"
+services:
+  kafka-manager:
+    image: 'eduard93/kafka-manager-demo:latest'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: 'kafka-manager'
+    environment:
+      - 'KAFKA_SERVERS_URL=kafka:29092'
+    ports:
+      - 8082:8082
+    restart: 'on-failure'
